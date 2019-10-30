@@ -4,7 +4,7 @@ public class LinkedList {
     public Node head;
 
     public class Node {
-        int data;
+        public int data;
         public Node next;
         Node (int d) {
             data = d;
@@ -14,6 +14,18 @@ public class LinkedList {
         public Node getNext() {
             return next;
         }
+
+        public int getData() { return data; }
+    }
+
+    public void printList() {
+        System.out.print("Linked list:");
+        Node currentNode = head;
+        while (currentNode != null) {
+            System.out.print(" [Node->" + currentNode.data + ']');
+            currentNode = currentNode.next;
+        }
+        System.out.println('\n');
     }
 
     public Node getHead() {
@@ -26,22 +38,26 @@ public class LinkedList {
         head = newNode;
     }
 
-    public void addData(int newData) {
+    public void append(int newData) {
+        /*
+            1. Allocate the Node & put in data
+            2. Set next as null
+            3. if the linked list is empty, then make the node as head
+            4. Else traverse till the last node
+            5. Change the next of the last node
+         */
+
+        Node newNode = new Node(newData);
+
         if (head == null) {
-            return;
-        }
+            head = new Node(newData);
+        } else {
+            Node last = head;
+            while (last.next != null) {
+                last = last.next;
+            }
 
-        Node tempNode = null;
-        if (head.next != null) {
-            tempNode = head.next;
-        }
-
-        while (tempNode.next != null) {
-            tempNode = tempNode.next;
-        }
-
-        if (tempNode.next == null) {
-            tempNode.next = new Node(newData);
+            last.next = newNode;
         }
 
     }
