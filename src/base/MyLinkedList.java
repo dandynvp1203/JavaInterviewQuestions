@@ -1,6 +1,6 @@
 package base;
 
-public class LinkedList {
+public class MyLinkedList {
     public Node head;
 
     public class Node {

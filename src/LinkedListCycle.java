@@ -1,4 +1,4 @@
-import base.LinkedList;
+import base.MyLinkedList;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -6,21 +6,21 @@ import java.util.Set;
 public class LinkedListCycle {
 
     public static void main(String[] args) {
-        LinkedList linkedList = new LinkedList();
-        linkedList.push(10);
-        linkedList.push(20);
-        linkedList.push(30);
-        linkedList.push(40);
+        MyLinkedList myLinkedList = new MyLinkedList();
+        myLinkedList.push(10);
+        myLinkedList.push(20);
+        myLinkedList.push(30);
+        myLinkedList.push(40);
 
-        linkedList.head.next.next.next.next = linkedList.head;
+        myLinkedList.head.next.next.next.next = myLinkedList.head;
 
         //findLoopTraversal(linkedList);
 
-        findLoopMap(linkedList);
+        findLoopMap(myLinkedList);
     }
 
-    public static void findLoopMap(LinkedList list) {
-        Set<LinkedList.Node> mySet = new HashSet<>();
+    public static void findLoopMap(MyLinkedList list) {
+        Set<MyLinkedList.Node> mySet = new HashSet<>();
         boolean found = false;
         while(list.getHead() != null) {
             if (mySet.contains(list.head)) {
@@ -38,10 +38,10 @@ public class LinkedListCycle {
         }
     }
 
-    public static void findLoopTraversal(LinkedList list) {
+    public static void findLoopTraversal(MyLinkedList list) {
         boolean found = false;
-        LinkedList.Node slowNode = list.getHead();
-        LinkedList.Node fastNode = list.getHead();
+        MyLinkedList.Node slowNode = list.getHead();
+        MyLinkedList.Node fastNode = list.getHead();
         while ( slowNode != null && fastNode != null && fastNode.next != null) {
             slowNode = slowNode.next;
             fastNode = fastNode.next.next;

@@ -1,3 +1,6 @@
+import java.util.HashMap;
+import java.util.Map;
+
 public class HashMapTwoSum {
     public static void main(String[] args) {
         int[] array = {2, 7, 11, 15};
@@ -6,6 +9,13 @@ public class HashMapTwoSum {
         int[] result = findSum(array, target);
         for (int i = 0; i < result.length; i++) {
             System.out.print(result[i]);
+        }
+    }
+
+    private static void findSumHashMap(int[] array, int target) {
+        Map<Integer, Integer> myMap = new HashMap<>();
+        for (int i: array) {
+            if(!myMap.containsKey(array[i]));
         }
     }
 

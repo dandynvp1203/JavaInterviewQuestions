@@ -1,27 +1,25 @@
-import base.LinkedList;
-
-import java.util.ArrayList;
+import base.MyLinkedList;
 
 public class LinkedListAddTwoNumbers {
     public static int multiplier = 0;
 
     public static void main(String[] args) {
-        LinkedList linkedList1 = new LinkedList();
-        linkedList1.append(2);
-        linkedList1.append(4);
-        linkedList1.append(3);
+        MyLinkedList myLinkedList1 = new MyLinkedList();
+        myLinkedList1.append(2);
+        myLinkedList1.append(4);
+        myLinkedList1.append(3);
 
-        LinkedList linkedList2 = new LinkedList();
-        linkedList2.append(5);
-        linkedList2.append(6);
-        linkedList2.append(4);
+        MyLinkedList myLinkedList2 = new MyLinkedList();
+        myLinkedList2.append(5);
+        myLinkedList2.append(6);
+        myLinkedList2.append(4);
 
-        linkedListAddTwoNumbers(linkedList1, linkedList2);
+        linkedListAddTwoNumbers(myLinkedList1, myLinkedList2);
     }
 
-    private static void linkedListAddTwoNumbers(LinkedList linkedList1, LinkedList linkedList2) {
-        int value1 = getValue(linkedList1);
-        int value2 = getValue(linkedList2);
+    private static void linkedListAddTwoNumbers(MyLinkedList myLinkedList1, MyLinkedList myLinkedList2) {
+        int value1 = getValue(myLinkedList1);
+        int value2 = getValue(myLinkedList2);
 
         int sum = value1 + value2;
         
@@ -30,7 +28,7 @@ public class LinkedListAddTwoNumbers {
     }
 
     private static void generateLinkedListFromSum(int sum) {
-        LinkedList myList = new LinkedList();
+        MyLinkedList myList = new MyLinkedList();
         while (sum != 0) {
             if (multiplier != 1) {
                 myList.append(sum%multiplier);
@@ -44,8 +42,8 @@ public class LinkedListAddTwoNumbers {
         myList.printList();
     }
 
-    private static int getValue(LinkedList linkedList1) {
-        LinkedList.Node tempNode = linkedList1.head;
+    private static int getValue(MyLinkedList myLinkedList1) {
+        MyLinkedList.Node tempNode = myLinkedList1.head;
         int value = 0;
         int i = 1;
         while(tempNode != null) {

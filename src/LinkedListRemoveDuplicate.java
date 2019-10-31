@@ -1,42 +1,41 @@
-import base.LinkedList;
+import base.MyLinkedList;
 
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Set;
 
 public class LinkedListRemoveDuplicate {
 
     public static void main(String[] args) {
 
-        LinkedList linkedList = new LinkedList();
-        linkedList.append(1);
-        linkedList.append(1);
-        linkedList.append(1);
-        linkedList.append(2);
-        linkedList.append(2);
-        linkedList.append(3);
-        linkedList.append(2);
-        linkedList.append(2);
-        linkedList.append(4);
-        linkedList.append(4);
-        linkedList.append(4);
-        linkedList.append(4);
-        linkedList.append(4);
-        linkedList.append(3);
-        linkedList.append(3);
-        linkedList.append(3);
-        linkedList.append(6);
+        MyLinkedList myLinkedList = new MyLinkedList();
+        myLinkedList.append(1);
+        myLinkedList.append(1);
+        myLinkedList.append(1);
+        myLinkedList.append(2);
+        myLinkedList.append(2);
+        myLinkedList.append(3);
+        myLinkedList.append(2);
+        myLinkedList.append(2);
+        myLinkedList.append(4);
+        myLinkedList.append(4);
+        myLinkedList.append(4);
+        myLinkedList.append(4);
+        myLinkedList.append(4);
+        myLinkedList.append(3);
+        myLinkedList.append(3);
+        myLinkedList.append(3);
+        myLinkedList.append(6);
 
-        linkedList.printList();
+        myLinkedList.printList();
 
-        removeDuplicate(linkedList);
+        removeDuplicate(myLinkedList);
 
-        linkedList.printList();
+        myLinkedList.printList();
     }
 
-    private static void removeDuplicate(LinkedList linkedList) {
-        LinkedList.Node current = linkedList.head;
-        LinkedList.Node tempNode = current;
+    private static void removeDuplicate(MyLinkedList myLinkedList) {
+        MyLinkedList.Node current = myLinkedList.head;
+        MyLinkedList.Node tempNode = current;
 
         Set<Integer> mySet = new HashSet<>();
 
