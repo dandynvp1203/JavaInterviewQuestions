@@ -15,5 +15,10 @@ public class GraphExample {
 
         graph.printGraph(graph);
 
+        System.out.println("\nBFS: " );
+        graph.BFS(1);
+        System.out.println("\nBFS: " );
+        graph.BFS(3);
+
     }
 }

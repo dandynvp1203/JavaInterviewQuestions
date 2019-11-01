@@ -1,9 +1,10 @@
 package graph;
 
+import java.util.Iterator;
 import java.util.LinkedList;
 
 public class Graph {
-    int vertices;
+    public int vertices;
     LinkedList<Integer> adjListArray[];
 
     Graph(int vertices) {
@@ -14,6 +15,29 @@ public class Graph {
             for(int i = 0; i < vertices; i++) {
                 adjListArray[i] = new LinkedList<>();
             }
+    }
+
+    public void BFS(int s) {
+        boolean visited[] = new boolean[vertices];
+
+        LinkedList<Integer> queue = new LinkedList<Integer>();
+
+        visited[s] = true;
+        queue.add(s);
+
+        while (queue.size() != 0) {
+            s = queue.poll();
+            System.out.print(s + " ");
+
+            Iterator<Integer> i = adjListArray[s].listIterator();
+            while (i.hasNext()) {
+                int n = i.next();
+                if (!visited[n]) {
+                    visited[n] = true;
+                    queue.add(n);
+                }
+            }
+        }
     }
 
     public static void addEdge(Graph graph, int src, int dest) {
