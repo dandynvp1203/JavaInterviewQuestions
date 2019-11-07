@@ -3,8 +3,8 @@ package base;
 public class MyBinarySearchTree {
 
     public static class Node{
-        int key;
-        Node left, right;
+        public int key;
+        public Node left, right;
 
          public Node(int key) {
             this.key = key;
@@ -12,19 +12,34 @@ public class MyBinarySearchTree {
         }
     }
 
-    Node root;
+    public Node root;
 
     public MyBinarySearchTree(int key) {
         root = new Node(key);
     }
 
-    MyBinarySearchTree() {
+    public MyBinarySearchTree() {
         root = null;
     }
 
 
+    //****** PRINT AT GIVEN LEVEL *******
+    public void printGivenLevel (Node root, int level) {
+        if (root == null) {
+            return;
+        }
+
+        if (level == 1) {
+            System.out.print(root.key + " ");
+        } else if (level > 1) {
+            printGivenLevel(root.left, level -1);
+            printGivenLevel(root.right, level -1);
+        }
+    }
+
+
     //****** INSERTION ********
-    void insert(int key) {
+    public void insert(int key) {
         root = insertRec(root, key);
     }
 
@@ -44,7 +59,7 @@ public class MyBinarySearchTree {
     }
 
     //***** PRINT IN ORDER *******
-    void inOrder() {
+    public void inOrder() {
         inOrderRec(root);
     }
 
@@ -70,7 +85,7 @@ public class MyBinarySearchTree {
 
     //****** Deletion ******
 
-    void deleteKey(int key)
+    public void deleteKey(int key)
     {
         root = deleteRec(root, key);
     }

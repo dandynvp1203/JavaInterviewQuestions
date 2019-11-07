@@ -18,7 +18,7 @@ public class GraphExample {
         System.out.println("\nBFS: " );
         graph.BFS(1);
         System.out.println("\nBFS: " );
-        graph.BFS(3);
+        graph.BFS(0);
 
     }
 }
