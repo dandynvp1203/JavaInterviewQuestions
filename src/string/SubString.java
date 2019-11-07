@@ -4,7 +4,7 @@ public class SubString {
     public static void main(String[] args) {
 
         String str = "aaaabbaa";
-        findPalindrome(str);
+        //findPalindrome(str);
     }
 
     private static void findPalindrome(String str) {

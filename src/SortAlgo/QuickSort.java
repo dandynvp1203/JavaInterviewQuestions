@@ -11,7 +11,6 @@ public class QuickSort {
     {
         int pivot = arr[high];
         int i = (low-1); // index of smaller element
-        System.out.print("i: " + i + " ");
         for (int j=low; j<high; j++)
         {
             // If current element is smaller than the pivot
