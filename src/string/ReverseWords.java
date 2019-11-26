@@ -7,7 +7,6 @@ public class ReverseWords {
 
         StringBuilder result = new StringBuilder();
         for (int i = array.length-1; i >= 0; i--) {
-            System.out.println(array[i]);
             if (i == 0) {
                 result.append(array[i]);
             } else {

@@ -11,7 +11,21 @@ public class PalindromeNumber {
         int x = 1441;
         int y = 1234322;
         
-        System.out.print(validatePalindrome(y));
+        System.out.println(validatePalindrome(y));
+        System.out.println(validatePalindromeTwo(x));
+    }
+
+    private static int reverseInteger(int x) {
+        int result = 0;
+        while (x != 0) {
+            result = result * 10 + x % 10;
+            x = x/10;
+        }
+        return result;
+    }
+
+    private static boolean validatePalindromeTwo(int x) {
+        return (reverseInteger(x) == x);
     }
 
     private static boolean validatePalindrome(int x) {

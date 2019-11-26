@@ -9,6 +9,16 @@ public class ReverseInteger {
     public static void main(String[] args) {
         int x = 123;
         reverseInteger(123);
+        reverseInteger2(123);
+    }
+
+    private static void reverseInteger2(int x) {
+        int result = 0;
+        while (x != 0) {
+            result = result * 10 + x % 10;
+            x = x/10;
+        }
+        System.out.println("Reversed Integer: " + result);
     }
 
     private static void reverseInteger(int x) {
@@ -29,6 +39,6 @@ public class ReverseInteger {
             multiplier = multiplier/10;
         }
 
-        System.out.print(reverse);
+        System.out.println(reverse);
     }
 }
