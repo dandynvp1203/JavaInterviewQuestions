@@ -2,7 +2,6 @@ import sun.rmi.runtime.Log;
 
 import java.util.Stack;
 
-import static sun.jvm.hotspot.debugger.win32.coff.DebugVC50X86RegisterEnums.TAG;
 
 public class ValidParentheses {
 

@@ -17,6 +17,27 @@ public class Graph {
             }
     }
 
+    public void DFSUtil(int v, boolean[] visited) {
+
+        visited[v] = true;
+        System.out.print(v + " ");
+
+        Iterator<Integer> i = adjListArray[v].listIterator();
+        while (i.hasNext()) {
+            int n = i.next();
+            if (!visited[n]) {
+                DFSUtil(n, visited);
+            }
+        }
+    }
+
+    void DFS(int v) {
+        boolean visited[] = new boolean[vertices];
+
+        DFSUtil(v, visited);
+    }
+
+    //****** Breadth First Search *******
     public void BFS(int s) {
         boolean visited[] = new boolean[vertices];
 

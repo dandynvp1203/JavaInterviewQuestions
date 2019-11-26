@@ -1,8 +1,6 @@
 package base.binarytree;
 
 import base.MyBinarySearchTree;
-import com.sun.source.tree.BinaryTree;
-
 public class MergeTwoTree {
 
     public static void main(String[] args) {
